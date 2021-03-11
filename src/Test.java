@@ -37,6 +37,7 @@ public class Test {
         InsertionSort insert = new InsertionSort();
         MergeSort merge = new MergeSort();
         QuickSort quick = new QuickSort();
+        HybridSort hybrid = new HybridSort();
 
         Random r = new Random();
         DecimalFormat df = new DecimalFormat();
@@ -61,57 +62,59 @@ public class Test {
 //        double[] test1 = new double[]{2.0,4.4,1.2,5.6,3.2,2.1,3.2,1.4,7.0,8.0,6.9};
 //        double[] test2 = new double[]{1.2,2.2,4.4,1.4};
 //        double[] test3 = new double[]{2.0,4.4,1.2,5.6,3.2,2.1,3.2,1.4,7.0,8.0,6.9};
-        double[] test4 = new double[]{2.0,4.4,1.2,5.6,3.2,2.1,3.2,1.4,7.0,8.0,6.9,8.1,1.4};
+//        double[] test4 = new double[]{2.0,4.4,1.2,5.6,3.2,2.1,3.2,1.4,7.0,8.0,6.9,8.1,1.4};
 //        double[] test5 = new double[]{54,38,59,25,65,84,39,27};
 
-//        file.write("Selection Sort\n");
-//        for(int i = 0; i < 10; i++){
-//            double[] temp = new double[tests[i].length];//make a copy so every sort alg can use a fresh unsorted array
-//            for(int j = 0; j<tests[i].length; j++){
-//                temp[j] = tests[i][j];
-//            }
-//            file.write(temp.length + " Items\n");
-//            System.out.println("Selection Sort: " + temp.length + " Items");
-//            //System.out.println("Before Selection Sort: " + Arrays.toString(tests[i]));
-//
-//            t.startTimer();
-//            select.sort(temp);
-//            long duration = t.endTimer();
-//
-//            file.write(duration + "ms\n\n");
-//            System.out.println("Time: " + duration + "ms");
-//
-//            //System.out.println("After Selection Sort: " + Arrays.toString(tests[i]));
-//            System.out.println("Is Sorted: " + select.checkIfSorted(temp));
-//
-//            System.out.println("\n---------------------------------------\n");
-//        }
-//
-//        file.write("Bubble Sort\n");
-//        for(int i = 0; i < 10; i++){
-//            double[] temp = new double[tests[i].length];//make a copy so every sort alg can use a fresh unsorted array
-//            for(int j = 0; j<tests[i].length; j++){
-//                temp[j] = tests[i][j];
-//            }
-//
-//            //System.out.println(Arrays.toString(temp));
-//
-//            file.write(temp.length + " Items\n");
-//            System.out.println("BubbleSort: " + temp.length + " Items");
-//            System.out.println("Before Selection Sort: " + Arrays.toString(temp));
-//
-//            t.startTimer();
-//            bubble.sort(temp);
-//            long duration = t.endTimer();
-//
-//            file.write(duration + "ms\n\n");
-//            System.out.println("Time: " + duration + "ms");
-//
-//            System.out.println("After Selection Sort: " + Arrays.toString(temp));
-//            System.out.println("Is Sorted: " + bubble.checkIfSorted(temp));
-//
-//            System.out.println("\n---------------------------------------\n");
-//        }
+        //UNCOMMENT FOR TESTING *BELOW*
+
+        file.write("Selection Sort\n");
+        for(int i = 0; i < 10; i++){
+            double[] temp = new double[tests[i].length];//make a copy so every sort alg can use a fresh unsorted array
+            for(int j = 0; j<tests[i].length; j++){
+                temp[j] = tests[i][j];
+            }
+            file.write(temp.length + " Items\n");
+            System.out.println("Selection Sort: " + temp.length + " Items");
+            //System.out.println("Before Selection Sort: " + Arrays.toString(tests[i]));
+
+            t.startTimer();
+            select.sort(temp);
+            long duration = t.endTimer();
+
+            file.write(duration + "ms\n\n");
+            System.out.println("Time: " + duration + "ms");
+
+            //System.out.println("After Selection Sort: " + Arrays.toString(tests[i]));
+            System.out.println("Is Sorted: " + select.checkIfSorted(temp));
+
+            System.out.println("\n---------------------------------------\n");
+        }
+
+        file.write("Bubble Sort\n");
+        for(int i = 0; i < 10; i++){
+            double[] temp = new double[tests[i].length];//make a copy so every sort alg can use a fresh unsorted array
+            for(int j = 0; j<tests[i].length; j++){
+                temp[j] = tests[i][j];
+            }
+
+            //System.out.println(Arrays.toString(temp));
+
+            file.write(temp.length + " Items\n");
+            System.out.println("BubbleSort: " + temp.length + " Items");
+            System.out.println("Before Selection Sort: " + Arrays.toString(temp));
+
+            t.startTimer();
+            bubble.sort(temp);
+            long duration = t.endTimer();
+
+            file.write(duration + "ms\n\n");
+            System.out.println("Time: " + duration + "ms");
+
+            System.out.println("After Selection Sort: " + Arrays.toString(temp));
+            System.out.println("Is Sorted: " + bubble.checkIfSorted(temp));
+
+            System.out.println("\n---------------------------------------\n");
+        }
 
         file.write("Insertion Sort\n");
         for(int i = 0; i < 10; i++){
@@ -140,81 +143,77 @@ public class Test {
 
         }
 
-//        file.write("Merge Sort\n");
-//        for(int i = 0; i < 10; i++){
-//            double[] temp = new double[tests[i].length];//make a copy so every sort alg can use a fresh unsorted array
-//            for(int j = 0; j<tests[i].length; j++){
-//                temp[j] = tests[i][j];
-//            }
-//
-//            file.write(temp.length + " Items\n");
-//            System.out.println("Merge Sort: " + temp.length + " Items");
-//            //System.out.println("Before Selection Sort: " + Arrays.toString(tests[i]));
-//
-//            t.startTimer();
-//            merge.sort(temp);
-//            long duration = t.endTimer();
-//            file.write(duration + "ms\n\n");
-//            System.out.println("Time: " + duration + "ms");
-//
-//            //System.out.println("After Selection Sort: " + Arrays.toString(tests[i]));
-//            System.out.println("Is Sorted: " + merge.checkIfSorted(temp));
-//
-//            System.out.println("\n---------------------------------------\n");
-//
-//        }
-//
-//        file.write("Quick Sort\n");
-//        for(int i = 0; i < 10; i++){
-//            double[] temp = new double[tests[i].length];//make a copy so every sort alg can use a fresh unsorted array
-//            for(int j = 0; j<tests[i].length; j++){
-//                temp[j] = tests[i][j];
-//            }
-//
-//            file.write(temp.length + " Items\n");
-//            System.out.println("Quick Sort: " + temp.length + " Items");
-//            //System.out.println("Before Selection Sort: " + Arrays.toString(tests[i]));
-//
-//            t.startTimer();
-//            quick.sort(temp);
-//            long duration = t.endTimer();
-//            file.write(duration + "ms\n\n");
-//            System.out.println("Time: " + duration + "ms");
-//
-//            //System.out.println("After Selection Sort: " + Arrays.toString(tests[i]));
-//            System.out.println("Is Sorted: " + quick.checkIfSorted(temp));
-//
-//            System.out.println("\n---------------------------------------\n");
-//
-//        }
+        file.write("Merge Sort\n");
+        for(int i = 0; i < 10; i++){
+            double[] temp = new double[tests[i].length];//make a copy so every sort alg can use a fresh unsorted array
+            for(int j = 0; j<tests[i].length; j++){
+                temp[j] = tests[i][j];
+            }
+
+            file.write(temp.length + " Items\n");
+            System.out.println("Merge Sort: " + temp.length + " Items");
+            //System.out.println("Before Selection Sort: " + Arrays.toString(tests[i]));
+
+            t.startTimer();
+            merge.sort(temp);
+            long duration = t.endTimer();
+            file.write(duration + "ms\n\n");
+            System.out.println("Time: " + duration + "ms");
+
+            //System.out.println("After Selection Sort: " + Arrays.toString(tests[i]));
+            System.out.println("Is Sorted: " + merge.checkIfSorted(temp));
+
+            System.out.println("\n---------------------------------------\n");
+
+        }
+
+        file.write("Quick Sort\n");
+        for(int i = 0; i < 10; i++){
+            double[] temp = new double[tests[i].length];//make a copy so every sort alg can use a fresh unsorted array
+            for(int j = 0; j<tests[i].length; j++){
+                temp[j] = tests[i][j];
+            }
+
+            file.write(temp.length + " Items\n");
+            System.out.println("Quick Sort: " + temp.length + " Items");
+            //System.out.println("Before Quick Sort: " + Arrays.toString(temp));
+
+            t.startTimer();
+            quick.sort(temp);
+            long duration = t.endTimer();
+            file.write(duration + "ms\n\n");
+            System.out.println("Time: " + duration + "ms");
+
+            //System.out.println("After Quick Sort: " + Arrays.toString(temp));
+            System.out.println("Is Sorted: " + quick.checkIfSorted(temp));
+
+            System.out.println("\n---------------------------------------\n");
+
+        }
+        file.write("Hybrid Sort\n");
+        for(int i = 0; i < 1; i++){
+            double[] temp = new double[tests[i].length];//make a copy so every sort alg can use a fresh unsorted array
+            for(int j = 0; j<tests[i].length; j++){
+                temp[j] = tests[i][j];
+            }
+
+            file.write(temp.length + " Items\n");
+            System.out.println("Hybrid Sort: " + temp.length + " Items");
+            System.out.println("Before Quick Sort: " + Arrays.toString(temp));
+
+            t.startTimer();
+            hybrid.sort(temp);
+            long duration = t.endTimer();
+            file.write(duration + "ms\n\n");
+            System.out.println("Time: " + duration + "ms");
+
+            System.out.println("After Quick Sort: " + Arrays.toString(temp));
+            System.out.println("Is Sorted: " + quick.checkIfSorted(temp));
+
+            System.out.println("\n---------------------------------------\n");
+
+        }
         file.close();
-//        System.out.println("Before Bubble Sort: " + Arrays.toString(test2));
-//        bubble.sort(test2);
-//        System.out.println("After Bubble Sort: " + Arrays.toString(test2));
-//        System.out.println("Is Sorted: " + select.checkIfSorted(test2));
-//
-//        System.out.println("\n---------------------------------------\n");
-//
-//        System.out.println("Before Insertion Sort: " + Arrays.toString(test3));
-//        insert.sort(test3);
-//        System.out.println("After Insertion Sort: " + Arrays.toString(test3));
-//        System.out.println("Is Sorted: " + select.checkIfSorted(test3));
-//
-//        System.out.println("\n---------------------------------------\n");
-//
-//        System.out.println("Before Merge Sort: " + Arrays.toString(test4));
-//        merge.sort(test4);
-//        System.out.println("After Merge Sort: " + Arrays.toString(test4));
-//        System.out.println("Is Sorted: " + select.checkIfSorted(test4));
-
-//        System.out.println("\n---------------------------------------\n");
-//
-//        System.out.println("Before QuickSort: " + Arrays.toString(test4));
-//        quick.sort(test4);
-//        System.out.println("After QuickSort: " + Arrays.toString(test4));
-//        System.out.println("Is Sorted: " + select.checkIfSorted(test4));
-
-
 
     }
 }
