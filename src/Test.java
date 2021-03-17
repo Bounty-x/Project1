@@ -77,10 +77,15 @@ public class Test {
             System.out.println("Selection Sort: " + temp.length + " Items");
             //System.out.println("Before Selection Sort: " + Arrays.toString(tests[i]));
 
+
+
+            long startTime = System.currentTimeMillis();
             t.startTimer();
             select.sort(temp);
             long duration = t.endTimer();
+            long endTime = System.currentTimeMillis() - startTime;
 
+            System.out.println("That took " + (endTime) + " milliseconds");
             file.write(duration + "ms\n\n");
             System.out.println("Time: " + duration + "ms");
 
@@ -101,7 +106,7 @@ public class Test {
 
             file.write(temp.length + " Items\n");
             System.out.println("BubbleSort: " + temp.length + " Items");
-            System.out.println("Before Selection Sort: " + Arrays.toString(temp));
+            //System.out.println("Before Selection Sort: " + Arrays.toString(temp));
 
             t.startTimer();
             bubble.sort(temp);
@@ -110,7 +115,7 @@ public class Test {
             file.write(duration + "ms\n\n");
             System.out.println("Time: " + duration + "ms");
 
-            System.out.println("After Selection Sort: " + Arrays.toString(temp));
+            //System.out.println("After Selection Sort: " + Arrays.toString(temp));
             System.out.println("Is Sorted: " + bubble.checkIfSorted(temp));
 
             System.out.println("\n---------------------------------------\n");
@@ -166,7 +171,7 @@ public class Test {
             System.out.println("\n---------------------------------------\n");
 
         }
-
+//
         file.write("Quick Sort\n");
         for(int i = 0; i < 10; i++){
             double[] temp = new double[tests[i].length];//make a copy so every sort alg can use a fresh unsorted array
@@ -184,30 +189,38 @@ public class Test {
             file.write(duration + "ms\n\n");
             System.out.println("Time: " + duration + "ms");
 
-            //System.out.println("After Quick Sort: " + Arrays.toString(temp));
+//            System.out.println("After Quick Sort: " + Arrays.toString(temp));
             System.out.println("Is Sorted: " + quick.checkIfSorted(temp));
 
             System.out.println("\n---------------------------------------\n");
 
         }
         file.write("Hybrid Sort\n");
-        for(int i = 0; i < 1; i++){
+        for(int i = 0; i < 10; i++){
             double[] temp = new double[tests[i].length];//make a copy so every sort alg can use a fresh unsorted array
             for(int j = 0; j<tests[i].length; j++){
                 temp[j] = tests[i][j];
             }
 
+            double[] test = new double[] {6,2,9,12,7,8,3,5};
+
             file.write(temp.length + " Items\n");
             System.out.println("Hybrid Sort: " + temp.length + " Items");
-            System.out.println("Before Quick Sort: " + Arrays.toString(temp));
+            //System.out.println("Before Quick Sort: " + Arrays.toString(temp));
 
-            t.startTimer();
+            long startTime = System.currentTimeMillis();
             hybrid.sort(temp);
-            long duration = t.endTimer();
-            file.write(duration + "ms\n\n");
-            System.out.println("Time: " + duration + "ms");
+            long endTime = System.currentTimeMillis() - startTime;
 
-            System.out.println("After Quick Sort: " + Arrays.toString(temp));
+            System.out.println("That took " + (endTime) + " milliseconds");
+
+//            t.startTimer();
+//            hybrid.sort(temp);
+//            long duration = t.endTimer();
+            file.write(endTime + "ms\n\n");
+//            System.out.println("Time: " + duration + "ms");
+
+//            System.out.println("After Quick Sort: " + Arrays.toString(temp));
             System.out.println("Is Sorted: " + quick.checkIfSorted(temp));
 
             System.out.println("\n---------------------------------------\n");

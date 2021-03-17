@@ -3,6 +3,8 @@ import java.util.Random;
 public class HybridSort implements MyList {
     InsertionSort insert = new InsertionSort();
     Random r = new Random();
+
+
     public void sort(double[] list){
         int bot = 0;
         int top = list.length-1;
@@ -10,30 +12,32 @@ public class HybridSort implements MyList {
 
     }
 
+
     public void hybridSort(double[] list, int bot, int top){ //help from https://www.techiedelight.com/hybrid-quicksort/
-        while(bot<top){
-            if(top - bot < 10){
-                insert.sort(list,bot,top);
-                break;
+        int pivot;
+        int startInsert = 1000; //insertion sort can do 1000 items instantly
+        while(bot<top) {
+            pivot = quicksort(list, bot, top);
+            if(pivot - bot <= startInsert) {
+                insert.quadraticsort(list, bot, pivot - 1);
             }
             else{
-                int pivot = quicksort(list, bot, top);
-
-                if(pivot - bot < top - pivot){
-                    hybridSort(list,bot,pivot-1);
-                    bot = pivot + 1;
-                }
-                else{
-                    hybridSort(list,pivot+1, top);
-                    top = pivot -1;
-                }
+                hybridSort(list,bot,pivot-1);
             }
+            if(top-pivot <= startInsert) {
+                insert.quadraticsort(list, pivot + 1, top);
+            }
+            else{
+                hybridSort(list,pivot+1,top);
+            }
+                return;
+
         }
     }
 
     public int quicksort(double[] list, int bot, int top){
-            //System.out.println("Got here");
-            return partition(list,bot,top);
+        //System.out.println("Got here");
+        return partition(list,bot,top);
     }
 
     /*last element will be pivot
@@ -57,6 +61,7 @@ public class HybridSort implements MyList {
             }
         }
         swap(list, i+1, top);
+        //System.out.println("PIVOT: " + i+1);
         return i+1;
     }
 }

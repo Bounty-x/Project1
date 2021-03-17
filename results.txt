@@ -1,0 +1,166 @@
+Selection Sort
+50000 Items
+1411ms
+
+100000 Items
+2788ms
+
+150000 Items
+6373ms
+
+200000 Items
+11674ms
+
+250000 Items
+17924ms
+
+300000 Items
+27042ms
+
+350000 Items
+36968ms
+
+400000 Items
+49162ms
+
+450000 Items
+61098ms
+
+500000 Items
+83758ms
+
+Bubble Sort
+50000 Items
+6818ms
+
+100000 Items
+20767ms
+
+150000 Items
+43676ms
+
+200000 Items
+75469ms
+
+250000 Items
+122543ms
+
+300000 Items
+173669ms
+
+350000 Items
+232576ms
+
+400000 Items
+308740ms
+
+450000 Items
+392610ms
+
+500000 Items
+485287ms
+
+Insertion Sort
+326
+1426
+3163
+6112
+9693
+12496
+17767
+22671
+29208
+35050
+Merge Sort
+50000 Items
+16ms
+
+100000 Items
+29ms
+
+150000 Items
+38ms
+
+200000 Items
+41ms
+
+250000 Items
+48ms
+
+300000 Items
+61ms
+
+350000 Items
+73ms
+
+400000 Items
+76ms
+
+450000 Items
+87ms
+
+500000 Items
+91ms
+
+Quick Sort
+50000 Items
+9ms
+
+100000 Items
+13ms
+
+150000 Items
+16ms
+
+200000 Items
+20ms
+
+250000 Items
+27ms
+
+300000 Items
+33ms
+
+350000 Items
+38ms
+
+400000 Items
+45ms
+
+450000 Items
+48ms
+
+500000 Items
+53ms
+
+Hybrid Sort
+50000 Items
+19ms
+
+100000 Items
+14ms
+
+150000 Items
+22ms
+
+200000 Items
+26ms
+
+250000 Items
+48ms
+
+300000 Items
+38ms
+
+350000 Items
+42ms
+
+400000 Items
+52ms
+
+450000 Items
+62ms
+
+500000 Items
+65ms
+
